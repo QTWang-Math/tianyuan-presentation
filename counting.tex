@@ -21,6 +21,8 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{xcolor}
+\usepackage{extarrows}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Theorem style
 
@@ -209,12 +211,12 @@
 \newcommand{\set}[2]{\{#1\,|\,#2\}}
 \newcommand{\bigset}[2]{\Biggl\{#1\,\bigg\lvert\,#2\Biggr\}}
 \newcommand{\defmap}[5]{
-           \begin{equation}
+           \begin{equation*}
               \begin{aligned}
                    #1:\quad  & #2 &\longrightarrow &\quad #3 \\
                       \quad  & #4    &\longmapsto  &\quad #5
               \end{aligned}
-           \end{equation}
+           \end{equation*}
           }
 \newcommand{\mtrtwo}[4]{\begin{pmatrix} #1 &#2 \\#3 &#4 \end{pmatrix}}
 \newcommand{\mtrthr}[9]{\begin{pmatrix} #1 &#2 &#3 \\#4 &#5 &#6\\ #7 &#8 &#9 \end{pmatrix}}
@@ -244,28 +246,39 @@
 %  \tableofcontents
 %\end{frame}
 
-\section{Outline}
+
 
 \begin{frame}{Outline}
 
 \begin{itemize}
   \item Introduce the counting method developed by Dan Barbasch, Jia-Jun Ma, Binyong Sun, and Chen-Bo Zhu.
-  \item Show how this method can be used to count the irreducible representations of general linear groups and unitary groups.
+  \item Show it's application in counting the irreducible representations of general linear groups and unitary groups.
 \end{itemize}
-
-
-
-
-
 \end{frame}
 
-\section{The Counting Formula}
 
-\begin{frame}{The Counting Formula}
 
-\begin{block}{Theorem (Barbasch, Ma, Sun, Zhu)}
 
-\end{block}
+
+
+
+
+
+
+
+
+\begin{frame}{Background}
+  \begin{itemize}
+    \item $\RG$: connected reductive algebraic group defined over $\BR$;
+    \item $G$ is a real Lie group together with a Lie group homorphism $\iota: G \to \RG(\BR)$ with open image and finite kernel;
+    \item $\fg$, $\fg_0$ are Lie algebras of $\RG(\BC)$, $G$;
+    \item $^{a}\fh$: the abstract Caratan subalgebra of $\fg$, with root lattice $Q_{\fg}$, weight group $Q^{\fg}$, and analalytic weight lattice $Q_{\iota}$ ($Q_{\fg} \subseteq Q_{\iota} \subseteq Q^{\fg} \subseteq {^{a}\fh}^*$);
+    \item $W$: the abstract Weyl group of $\fg$ act on $^{a}\fh$;
+    \item $\mathrm{Rep}(G)$: the category of Casselman-Wallach representations of $G$;
+    \item $\mathrm{Irr}(G)$: set of isomorphism classes of irreducible objects in $\mathrm{Rep}(G)$.
+  \end{itemize}
+  
+
 
 
 
@@ -277,11 +290,141 @@
 
 
 \begin{frame}
-\begin{block}{Recall:}
 
+  \begin{itemize}
+    \item There is a partition of $\Irr(G)$ with respect to infinitesimal characters:
+  \[\Irr(G) = \bigsqcup_{\lambda \in W \backslash {^{a}\fh}^*} \Irr_{\lambda}(G),
+  \]
+  according to work of Harish-Chandra, each set $\Irr_{\lambda}(G)$ is finite;
+  \item According to complex associated variety (annihilator variety), there is a further partition of $\Irr_{\lambda}(G)$:
+  \[\Irr_{\lambda}(G) = \bigsqcup_{\CO \in \RG(\BC)\backslash \Nil(\fg)}\Irr_{\lambda}(G;\CO).\]
+  \end{itemize}
+
+Goal: Describe the size of each set $\Irr_{\lambda}(G;\CO)$ in terms of combinatorial data.
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Counting Formula}
+\begin{block}{Theorem (Barbasch, Ma, Sun, Zhu)}
+  \begin{equation*}
+        \sharp(\Irr_{\nu}(G;\CO)) \leq \sum_{\sigma \in \Irr(W(\Lambda);\CO)} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
+    \end{equation*}
+    where $1_{W_\nu}$ denotes the trivial representation of the stabilizer $W_\nu$ of $\nu$ in $W$. The equality holds if the Coxeter group $W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.
 \end{block}
 
+In their paper, they use this formula to count the number of special unipotent representations.
 
+\end{frame}
+
+
+
+
+
+\begin{frame}{Double Cells, Special Representations}
+  
+\end{frame}
+
+
+
+
+\begin{frame}{Coherent Continuation Representation}
+  $\CR_{\mathrm{hol}}(\RG(\BC))$: Grothendieck ring of finite-dimensional holomorphic representations of $\RG(\BC)$.\par
+  $\CK(G)$: Grothendieck group of $\Rep(G)$ which has a $\CR_{\mathrm{hol}}(\RG(\BC))$ module structure via tensor product.
+  \begin{block}{Coherent family}
+    Let $\Lambda = \nu + Q_{\iota} \subseteq {^{a}\fh}^*$, a $\Lambda$-coherent family is a map
+   $$\Phi: \Lambda \to \CK(G),$$
+   such that:
+   \begin{itemize}
+      \item for any $\nu \in \Lambda$, $\Phi(\nu) \in \CK_{\nu}(G)$,
+      \item for any $F \in \CR_{\mathrm{hol}}(\RG(\BC))$ and $\nu \in \Lambda$, $F \cdot (\Phi(\nu)) = \sum_{\mu \in \Delta(F)} \Phi(\nu + \mu)$ (where $\Delta(F)$ is the set of weights of $F$ counted multiplicity).
+   \end{itemize}
+  \end{block}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+  Let $W(\Lambda) \subseteq W$ denote the integral Weyl group with respect to $\Lambda$.
+  \begin{block}{Coherent continuation representation}
+  Let $\mathrm{Coh}_{\Lambda}(\CK(G))$ denote the complex vector space of all coherent families on $\Lambda$. It is a representation of $W(\Lambda)$ under the action
+  \[(w \cdot \Psi)(\nu) = \Psi(w^{-1}\nu),\]
+  for any $w \in W(\Lambda)$, $\Psi \in \mathrm{Coh}_{\Lambda}(\CK(G))$, $\nu \in \Lambda$.
+  \end{block}
+    For any $\nu \in \Lambda$ we have the evaluation map \defmap{\mathrm{ev}}{\mathrm{Coh}_{\Lambda}(\CK(G))}{\CK_{\nu}}{\Psi}{\Psi(\nu)}
+  \begin{block}{Theorem (Schmid, Zuckerman)}
+    $\mathrm{ev}$ is surjective for each $\nu \in \Lambda$, and bijective when $\nu$ is regular.
+  \end{block}
+
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Harish-Chandra Cells}
+  \begin{block}{Theorem(Vogan's green book)}
+    Suppose $\nu \in {^{a}\fh}^*$ dominant, $M \in \CK_{\nu}(G)$ is an irreducible representation representation. Then there exist a unique coherent family $\bar{\Psi}$ characterised by the following properties:
+    \begin{itemize}
+      \item $\bar{\Psi}(\nu) = M$;
+      \item If $\mu$ is dominant, then $\bar{\Psi}(\mu)$ is irreducible or zero.
+    \end{itemize}
+  \end{block}
+  There is a basis $\CB = \{\bar{\Psi_i}\}$ of $\mathrm{Coh}_{\Lambda}(\CK(G))$ such that for any regular dominant $\mu$, $\bar{\Psi_i}(\mu)$ is an irreducible representation with infinitesimal character $\nu$.\par
+  We call $(\mathrm{Coh}_{\Lambda}(\CK(G)),\CB)$ a \textcolor{red}{basal representation} .\par
+  We can also define basal subrepresentations. 
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+  For any subset $\CS$ of $\mathrm{Coh}_{\Lambda}(\CK(G))$, denote by $\left \langle \CS \right \rangle$ the minimal basal subrepresentation containing $\CS$.\par
+  Define an equivalence relation on $\CB$ by: 
+  $\bar{\Psi_i} \approx  \bar{\Psi_j}$ if and only if $\left \langle \bar{\Psi_i} \right \rangle = \left \langle \bar{\Psi_j} \right \rangle$.\par
+  The equivalence classes of $\CB$ with respect to this relation are called Harish-Chandra cells.
+  \begin{block}{Cell representations}
+    Let $\CC$ be a cell in $\CB$ and put $\bar{\CC} = \left \langle \CC \right \rangle \cap \CB$. Define the cell representation attached to $\CC$ by
+    \[ \mathrm{Coh}_{\Lambda}(\CK(G))(\CC) := \left \langle \bar{\CC} \right \rangle  / \left \langle \bar{\CC} \backslash \CC \right \rangle\] 
+  \end{block}
+
+  
+\end{frame}
+
+
+
+
+
+\begin{frame}
+  \begin{block}{Hypothesis}
+    The set \set{$\sigma \in \Irr(W(\Lambda))$}{ \textrm{$\sigma$ occurs in $\mathrm{Coh}_{\Lambda}(\CK(G))(\CC)$}} is contained in the double cell containing the special representation $\sigma_{\CC}$.
+  \end{block}
+\end{frame}
+
+
+
+
+\begin{frame}{BMSZ's Proof}
+  
+  \begin{align*}
+    \sharp(\Irr_{\nu}(G)) &= \dim \CK_{\nu}(G) \xlongequal{Vogan} \dim \mathrm{Coh}_{\Lambda}(\CK(G))_{W_\nu} \\
+    & = [1_{W_{\nu}}:\mathrm{Coh}_{\Lambda}(\CK(G))] \\
+    & = \sum_{\sigma \in \Irr(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
+  \end{align*}
+  If $S$ is a Zariski closed $\RG(\BC)$-stable subset of $\Nil(\fg)$, then
+  \begin{align*}
+    \sharp(\Irr_{\nu,S}(G)) & = \sum_{\sigma \in \Irr(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda,S}(\CK(G))]\\
+    & \xlongequal{\textcolor{red}{Hypothesis}} \sum_{\sigma \in \Irr_{S}(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))].
+  \end{align*}
 \end{frame}
 
 
@@ -293,17 +436,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-\section{Application and Results}
 
 \begin{frame}{Combinatorial Notations}
 
