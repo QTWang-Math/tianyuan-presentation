@@ -1,11 +1,11 @@
 # Fdb version 4
-["xdvipdfmx"] 1754638432.03122 "temp/counting.xdv" "temp/counting.pdf" "temp/counting" 1754638432.31234 0
-  "temp/counting.xdv" 1754638431.98638 300564 cddb3c39309e4d9f86efe6890a8aecc4 "xelatex"
+["xdvipdfmx"] 1754752292.81184 "temp/counting.xdv" "temp/counting.pdf" "temp/counting" 1754752293.0785 0
+  "temp/counting.xdv" 1754752292.76092 868436 0d2e43f6625e0f3ef452cb9771d7ceca "xelatex"
   (generated)
   "temp/counting.pdf"
   (rewritten before read)
-["xelatex"] 1754638430.86717 "/Users/quentinwang/Documents/tianyuan presentation/counting.tex" "temp/counting.xdv" "counting" 1754638432.31087 0
-  "/Users/quentinwang/Documents/tianyuan presentation/counting.tex" 1754638430.66909 28654 ab6c062d1c3ede8e01c85dcce7a1180e ""
+["xelatex"] 1754752290.9055 "/Users/quentinwang/Documents/tianyuan presentation/counting.tex" "temp/counting.xdv" "counting" 1754752293.07697 0
+  "/Users/quentinwang/Documents/tianyuan presentation/counting.tex" 1754752290.37615 29650 17469e30bafa03510a32cf9ee18949bb ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -240,10 +240,10 @@
   "/usr/local/texlive/2025/texmf-dist/web2c/texmf.cnf" 1739380943 42148 61becc7c670cd061bb319c643c27fdd4 ""
   "/usr/local/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1741450550 5639796 b6822fbf027c6598cec2e241e0925725 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "counting.tex" 1754638430.66909 28654 ab6c062d1c3ede8e01c85dcce7a1180e ""
-  "temp/counting.aux" 1754638431.98558 5226 9d544d81f3b767c01096c6fa67f36226 "xelatex"
-  "temp/counting.nav" 1754638431.98632 2783 f8b0d1eaf383f71e4268670ac899f7e1 "xelatex"
-  "temp/counting.out" 1754638431.44546 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "counting.tex" 1754752290.37615 29650 17469e30bafa03510a32cf9ee18949bb ""
+  "temp/counting.aux" 1754752292.75993 5259 3e5bcb8e3bc2822134b4ada8a9caba1c "xelatex"
+  "temp/counting.nav" 1754752292.76086 2809 d32cd50c6175dcead3ae306eb4740b5d "xelatex"
+  "temp/counting.out" 1754752291.46464 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
   (generated)
   "temp/counting.aux"
   "temp/counting.log"

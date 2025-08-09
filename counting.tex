@@ -254,7 +254,7 @@
 
 \begin{itemize}
   \item Introduce the counting method developed by Dan Barbasch, Jia-Jun Ma, Binyong Sun, and Chen-Bo Zhu in their paper: Special unipotent representations of real classical groups: Counting and reduction. J. Eur. Math. Soc. (2025). 
-  \item Show it's application in counting the irreducible representations of general linear groups and unitary groups.
+  \pause \item Show its application in counting the irreducible representations of general linear groups and unitary groups.
 \end{itemize}
 \end{frame}
 
@@ -269,15 +269,15 @@
 
 
 
-\begin{frame}{Background}
+\begin{frame}{Language for today}
   \begin{itemize}
     \item $\RG$: connected reductive algebraic group defined over $\BR$;
-    \item $G$ is a real Lie group together with a Lie group homorphism $\iota: G \to \RG(\BR)$ with open image and finite kernel;
-    \item $\fg$, $\fg_0$ are Lie algebras of $\RG(\BC)$, $G$;
-    \item $^{a}\fh$: the abstract Caratan subalgebra of $\fg$, with root lattice $Q_{\fg}$, weight group $Q^{\fg}$, and analalytic weight lattice $Q_{\iota}$ ($Q_{\fg} \subseteq Q_{\iota} \subseteq Q^{\fg} \subseteq {^{a}\fh}^*$);
-    \item $W$: the abstract Weyl group of $\fg$ act on $^{a}\fh$;
-    \item $\mathrm{Rep}(G)$: the category of Casselman-Wallach representations of $G$;
-    \item $\mathrm{Irr}(G)$: set of isomorphism classes of irreducible objects in $\mathrm{Rep}(G)$.
+    \pause\item $G$ is a real Lie group together with a Lie group homorphism $\iota: G \to \RG(\BR)$ with open image and finite kernel;
+    \pause\item $\fg$, $\fg_0$ are Lie algebras of $\RG(\BC)$, $G$;
+    \pause\item $^{a}\fh$: the abstract Caratan subalgebra of $\fg$, with root lattice $Q_{\fg}$, weight group $Q^{\fg}$, and analalytic weight lattice $Q_{\iota}$ ($Q_{\fg} \subseteq Q_{\iota} \subseteq Q^{\fg} \subseteq {^{a}\fh}^*$);
+    \pause\item $W$: the abstract Weyl group of $\fg$ acts on $^{a}\fh$;
+    \pause\item $\mathrm{Rep}(G)$ is the category of Casselman-Wallach representations of $G$, with the Grothendieck group $\CK(G)$;
+    \pause\item $\mathrm{Irr}(G)$ is the set of isomorphism classes of irreducible objects in $\mathrm{Rep}(G)$, $\Irr_{\lambda}(G)$ is the subset with infinitesimal character $\lambda \in {^{a}\fh}^*$.
   \end{itemize}
 \end{frame}
 
@@ -285,20 +285,28 @@
 
 
 
-
-\begin{frame}
-
+\begin{frame}{Goals}
   \begin{itemize}
-    \item There is a partition of $\Irr(G)$ with respect to infinitesimal characters:
-  \[\Irr(G) = \bigsqcup_{\lambda \in W \backslash {^{a}\fh}^*} \Irr_{\lambda}(G),
+  \item The set \(\Irr(G)\) admits a partition according to infinitesimal characters:
+  \[
+    \Irr(G) = \bigsqcup\limits_{\lambda \in W \backslash {^{a}\mathfrak{h}}^*} \Irr_{\lambda}(G).
   \]
-  according to work of Harish-Chandra, each set $\Irr_{\lambda}(G)$ is finite;
-  \item According to complex associated variety (or called annihilator variety, which is always the closure of a unique nilpotent orbits by results of [Borho, Brylinski], [Joseph]), there is a further partition of $\Irr_{\lambda}(G)$:
-  \[\Irr_{\lambda}(G) = \bigsqcup_{\CO \in \RG(\BC)\backslash \Nil(\fg)}\Irr_{\lambda}(G;\CO).\]
-  \end{itemize}
+  By Harish-Chandra's work, each subset \(\Irr_{\lambda}(G)\) is finite.
+  
+  \pause\item Further, using the notion of the complex associated variety (also called the annihilator variety, which is always the \alert{closure of a unique nilpotent orbit} by results of Borho-Brylinski and Joseph), the set \(\Irr_{\lambda}(G)\) admits a finer partition:
+  \[
+    \Irr_{\lambda}(G) = \bigsqcup\limits_{\mathcal{O} \in \RG(\mathbb{C}) \backslash \Nil(\mathfrak{g})} \Irr_{\lambda}(G; \mathcal{O}).
+  \]
+\end{itemize}
 
-Goal: Describe the size of each set $\Irr_{\lambda}(G;\CO)$ in terms of combinatorial data.
+\medskip
+
+\noindent
+\pause\textbf{Goal:} Describe the size of each set \(\Irr_{\lambda}(G; \mathcal{O})\) in terms of some combinatorial data.
 \end{frame}
+
+
+
 
 
 
@@ -308,12 +316,12 @@ Goal: Describe the size of each set $\Irr_{\lambda}(G;\CO)$ in terms of combinat
 \begin{frame}{Counting Formula}
 \begin{block}{Theorem (Barbasch, Ma, Sun, Zhu)}
   \begin{equation*}
-        \sharp(\Irr_{\nu}(G;\CO)) \leq \sum_{\sigma \in \Irr(W(\Lambda);\CO)} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
+        \sharp(\Irr_{\nu}(G;\CO)) \leq \sum\limits_{\sigma \in \Irr(W(\Lambda);\CO)} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
     \end{equation*}
-    where $1_{W_\nu}$ denotes the trivial representation of the stabilizer $W_\nu$ of $\nu$ in $W$. The equality holds if the Coxeter group $W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.
+    where $1_{W_\nu}$ denotes the trivial representation of the stabilizer $W_\nu$ of $\nu$ in $W$. The \alert{equality holds} if the Coxeter group $W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.
 \end{block}
 
-In their paper, they use this formula to count the number of special unipotent representations in order to construct them via theta correspondence.
+\pause In their paper, they use this formula to count the number of special unipotent representations to construct them via theta correspondence.
 
 \end{frame}
 
@@ -321,15 +329,15 @@ In their paper, they use this formula to count the number of special unipotent r
 
 
 
-\begin{frame}{Double Cells, Special Representations}
+\begin{frame}{Double cells, Special representations}
   
 \begin{itemize}
   \item Springer correspondence: $\sigma \in \Irr(W) \leadsto (\CO,\CL)$;
-  \item For the Weyl group $W$, Lusztig define a class of special representations: special nilpotent orbit $\CO \in \Nil(\fg)\rightsquigarrow \sigma_{\CO}$ (via Springer correspondence).
-  \item Lusztig also defined an equivalence relation on $\Irr(W)$, each equivalence is called a double cell, $\Irr^{sp}(W) \leftrightarrow \{ \textrm{double cells} \}$.
-  \item There is a $j$-induction (also called the truncated induction) operation: $j_{W(\Lambda)}^{W}: \{ \textrm{special representations $W(\Lambda)$}\} \to \{\textrm{Springer representations of $W$} \}$.
+  \pause\item For the Weyl group $W$, Lusztig define a class of \alert{special representations}:  $\sigma_{\CO} \rightsquigarrow (\CO,1)$, here $\CO$ is a \alert{special nilpotent orbit}.
+  \pause\item Lusztig also defined an equivalence relation on $\Irr(W)$, each equivalence class is called a \alert{double cell}, $\Irr^{sp}(W) \leftrightarrow \{ \textrm{double cells} \}$.
+  \pause\item There is a \alert{$j$-induction} (also called the truncated induction) operation, $j_{W(\Lambda)}^{W}: \{ \textrm{special representations $W(\Lambda)$}\} \to \{\textrm{Springer representations of $W$} \}$.
 \end{itemize}
-  
+
 \end{frame}
 
 
@@ -341,19 +349,19 @@ In their paper, they use this formula to count the number of special unipotent r
     For a nilpotent orbit $\CO \in \Nil(\fg)$.
     \begin{itemize}
       \item $\Irr^{\mathrm{sp}}(W(\Lambda);\CO) = \set{\sigma \in \Irr(W(\Lambda))}{\textrm{$\sigma$ is special}, j_{W(\Lambda)}^{W}(\sigma) = \sigma_{\CO}}$;
-      \item $\Irr(W(\Lambda);\CO) = \set{\sigma \in \Irr(W(\Lambda))}{\textrm{exist $\sigma_{0} \in \Irr^{\mathrm{sp}}(W(\Lambda);\CO)$}, \sigma \approx \sigma_{0}, }$
+      \pause\item $\Irr(W(\Lambda);\CO) = \set{\sigma \in \Irr(W(\Lambda))}{\textrm{exist $\sigma_{0} \in \Irr^{\mathrm{sp}}(W(\Lambda);\CO)$}, \sigma \approx \sigma_{0}, }$
     \end{itemize}
   \end{block}
-  $\Irr(W(\Lambda);\CO)$ is a union of several double cells.
+  \pause$\Irr(W(\Lambda);\CO)$ is a union of several double cells.
 \end{frame}
 
 
 
-\begin{frame}{Coherent Continuation Representation}
+\begin{frame}{Coherent continuation representations}
   $\CR_{\mathrm{hol}}(\RG(\BC))$: Grothendieck ring of finite-dimensional holomorphic representations of $\RG(\BC)$.\par
-  $\CK(G)$: Grothendieck group of $\Rep(G)$ which has a $\CR_{\mathrm{hol}}(\RG(\BC))$ module structure via tensor product.
-  \begin{block}{Coherent family}
-    Let $\Lambda = \nu + Q_{\iota} \subseteq {^{a}\fh}^*$, a $\Lambda$-coherent family is a map
+  \pause$\CK(G)$: Grothendieck group of $\Rep(G)$ which has a $\CR_{\mathrm{hol}}(\RG(\BC))$ module structure via tensor product.
+  \pause\begin{block}{Coherent family}
+    Let $\Lambda = \nu + Q_{\iota} \subseteq {^{a}\fh}^*$, a \alert{$\Lambda$-coherent family}  is a map
    $$\Phi: \Lambda \to \CK(G),$$
    such that:
    \begin{itemize}
@@ -369,14 +377,14 @@ In their paper, they use this formula to count the number of special unipotent r
 
 
 \begin{frame}
-  Let $W(\Lambda) \subseteq W$ denote the integral Weyl group with respect to $\Lambda$.
-  \begin{block}{Coherent continuation representation}
+  Let $W(\Lambda) \subseteq W$ denote the integral Weyl group for $\Lambda$.
+  \pause\begin{block}{Coherent continuation representation}
   Let $\mathrm{Coh}_{\Lambda}(\CK(G))$ denote the complex vector space of all coherent families on $\Lambda$. It is a representation of $W(\Lambda)$ under the action
   \[(w \cdot \Psi)(\nu) = \Psi(w^{-1}\nu),\]
   for any $w \in W(\Lambda)$, $\Psi \in \mathrm{Coh}_{\Lambda}(\CK(G))$, $\nu \in \Lambda$.
   \end{block}
-    For any $\nu \in \Lambda$ we have the evaluation map \defmap{\mathrm{ev}}{\mathrm{Coh}_{\Lambda}(\CK(G))}{\CK_{\nu}}{\Psi}{\Psi(\nu)}
-  \begin{block}{Theorem (Schmid, Zuckerman)}
+    \pause For any $\nu \in \Lambda$ we have the evaluation map \defmap{\mathrm{ev}}{\mathrm{Coh}_{\Lambda}(\CK(G))}{\CK_{\nu}}{\Psi}{\Psi(\nu)}
+  \pause\begin{block}{Theorem (Schmid, Zuckerman)}
     $\mathrm{ev}$ is surjective for each $\nu \in \Lambda$, and bijective when $\nu$ is regular.
   \end{block}
 
@@ -387,17 +395,17 @@ In their paper, they use this formula to count the number of special unipotent r
 
 
 
-\begin{frame}{Harish-Chandra Cells}
+\begin{frame}{Harish-Chandra cells}
   \begin{block}{Theorem(Vogan's green book)}
-    Suppose $\nu \in {^{a}\fh}^*$ dominant, $M \in \CK_{\nu}(G)$ is an irreducible representation representation. Then there exist a unique coherent family $\bar{\Psi}$ characterised by the following properties:
+    Suppose $\nu \in {^{a}\fh}^*$ dominant, $M \in \CK_{\nu}(G)$ is an irreducible representation. Then there exist a unique coherent family $\bar{\Psi}$ characterised by the following properties:
     \begin{itemize}
       \item $\bar{\Psi}(\nu) = M$;
       \item If $\mu$ is dominant, then $\bar{\Psi}(\mu)$ is irreducible or zero.
     \end{itemize}
   \end{block}
-  There is a basis $\CB = \{\bar{\Psi_i}\}$ of $\mathrm{Coh}_{\Lambda}(\CK(G))$ such that for any regular dominant $\mu$, $\bar{\Psi_i}(\mu)$ is an irreducible representation with infinitesimal character $\nu$.\par
-  We call $(\mathrm{Coh}_{\Lambda}(\CK(G)),\CB)$ a \textcolor{red}{basal representation}.\par
-  We can also define basal subrepresentations. 
+  \pause There is a basis $\CB = \{\bar{\Psi_i}\}$ of $\mathrm{Coh}_{\Lambda}(\CK(G))$ such that for any regular dominant $\mu$, $\bar{\Psi_i}(\mu)$ is an irreducible representation with infinitesimal character $\mu$.\par
+  \pause We call $(\mathrm{Coh}_{\Lambda}(\CK(G)),\CB)$ a \textcolor{red}{basal representation}.\par
+  \pause We can also define basal subrepresentations, which are subrepresentations of $\mathrm{Coh}_{\Lambda}(\CK(G))$ spanned by a subset of $\CB$. 
 \end{frame}
 
 
@@ -408,14 +416,14 @@ In their paper, they use this formula to count the number of special unipotent r
 \begin{frame}
   \begin{itemize}
     \item For any subset $\CS$ of $\mathrm{Coh}_{\Lambda}(\CK(G))$, denote by $\left \langle \CS \right \rangle$ the minimal basal subrepresentation containing $\CS$.
-    \item Define an equivalence relation on $\CB$ by: 
+    \pause\item Define an equivalence relation on $\CB$ by: 
     $\bar{\Psi_i} \approx  \bar{\Psi_j}$ if and only if $\left \langle \bar{\Psi_i} \right \rangle = \left \langle \bar{\Psi_j} \right \rangle$.
-    \item The equivalence classes of $\CB$ with respect to this relation are called Harish-Chandra cells.
+    \pause\item The equivalence classes of $\CB$ under this relation are called Harish-Chandra cells.
   \end{itemize}
   
   
   
-  \begin{block}{Cell representations}
+  \pause\begin{block}{Cell representations}
     Let $\CC$ be a cell in $\CB$ and put $\bar{\CC} = \left \langle \CC \right \rangle \cap \CB$. Define the cell representation attached to $\CC$ by
     \[ \mathrm{Coh}_{\Lambda}(\CK(G))(\CC) := \left \langle \bar{\CC} \right \rangle  / \left \langle \bar{\CC} \backslash \CC \right \rangle\] 
   \end{block}
@@ -430,13 +438,13 @@ In their paper, they use this formula to count the number of special unipotent r
 
 \begin{frame}
 \begin{itemize}
-  \item There is also a coherent continuation theory ($\mathrm{Coh}_{\Lambda}(\CK(\fg,\fb))$) for highest weight representations of complex Lie algebra $\fg$ , similarly there is a notion of (two-side) Kazhdan-Lusztig cells, which is $1-1$ correspondence with special representations in $\Irr(W(\Lambda))$.
-  \item Every Harish-Chandra cell corresponds to a Kazhdan-Lusztig cell (via compairing their annihilator ideals), so we have a map $\{Harish-Chandra \ cells\} \to \Irr^{sp}(W(\Lambda))$, $\CC \mapsto \sigma_{\CC}$.
-  \item In fact every representation in a Harish-Chandra cell $\CC$ has the complex associated variety $\bar{\CO_{\CC}}$, here $\CO_{\CC}$ is the nilpotent orbit corresponds to $j_{W(\Lambda)}^{W}\sigma_{\CC}$.
+  \item There is also a coherent continuation theory ($\mathrm{Coh}_{\Lambda}(\CK(\fg,\fb))$) for \alert{highest weight representations} of complex reductive Lie algebra $\fg$ , similarly there is a notion of  \alert{two-side cells} (Kazhdan-Lusztig calls), which is $1-1$ correspondence with special representations in $\Irr(W(\Lambda))$.
+  \item Every Harish-Chandra cell corresponds to a Kazhdan-Lusztig cell (via comparing their annihilator ideals); furthermore, we have a map $\{Harish-Chandra \ cells\} \to \Irr^{sp}(W(\Lambda))$, $\CC \mapsto \sigma_{\CC}$.
+  \item In fact every representation in a Harish-Chandra cell $\CC$ has the \alert{same complex associated variety} $\bar{\CO_{\CC}}$, here $\CO_{\CC}$ is the nilpotent orbit corresponds to $j_{W(\Lambda)}^{W}\sigma_{\CC}$.
 \end{itemize}
 
 
-  \begin{block}{Hypothesis}
+  \begin{block}{Conjecture}
     The set \set{$\sigma \in \Irr(W(\Lambda))$}{ \textrm{$\sigma$ occurs in $\mathrm{Coh}_{\Lambda}(\CK(G))(\CC)$}} is contained in the double cell containing the special representation $\sigma_{\CC}$.
   \end{block}
 
@@ -446,17 +454,17 @@ In their paper, they use this formula to count the number of special unipotent r
 
 
 
-\begin{frame}{BMSZ's Proof}
-  BMSZ proved that this hypothesis holds under some technical assumptions ($W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group.).
-  \begin{align*}
+\begin{frame}{BMSZ's proof of the counting formula}
+  BMSZ proved that this conjecture holds under some technical assumptions ($W(\Lambda)$ has no simple factor of type $F_4$, $E_6$, $E_7$, or $E_8$, and $G$ is linear or isomorphic to a real metaplectic group).
+  \pause\begin{align*}
     \sharp(\Irr_{\nu}(G)) &= \dim \CK_{\nu}(G) \xlongequal{Vogan} \dim \mathrm{Coh}_{\Lambda}(\CK(G))_{W_\nu} \\
     & = [1_{W_{\nu}}:\mathrm{Coh}_{\Lambda}(\CK(G))] \\
     & = \sum_{\sigma \in \Irr(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))],
   \end{align*}
-  If $S$ is a Zariski closed $\RG(\BC)$-stable subset of $\Nil(\fg)$, then
+  \pause If $S$ is a Zariski closed $\RG(\BC)$-stable subset of $\Nil(\fg)$, then
   \begin{align*}
     \sharp(\Irr_{\nu,S}(G)) & = \sum_{\sigma \in \Irr(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda,S}(\CK(G))]\\
-    & \xlongequal{\alert{Hypothesis}} \sum_{\sigma \in \Irr_{S}(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))].
+    & \xlongequal{\alert{Conjecture}} \sum_{\sigma \in \Irr_{S}(W(\Lambda))} [1_{W_\nu}:\sigma] \cdot [\sigma:\mathrm{Coh}_{\Lambda}(\CK(G))].
   \end{align*}
 \end{frame}
 
@@ -467,7 +475,7 @@ In their paper, they use this formula to count the number of special unipotent r
 
 
 
-\begin{frame}{Classical Groups Considered}
+\begin{frame}{Classical groups considered}
 
 \begin{center}
    \begin{tabular}{c|c|c}
@@ -482,12 +490,20 @@ In their paper, they use this formula to count the number of special unipotent r
    \end{tabular}
 \end{center}
 
-Identification:
+\pause Identification:
 
 \[{^{a}\fh}^* = \left\{
    \begin{aligned}
-       &= \BC^n, & \textrm{if $\star \in \{A^\BR,A^\BH,A\}$};\\
-       &= \BC^n \times \BC^n, & \textrm{if $\star = A^\BC$}.
+       & \BC^n, & \textrm{if $\star \in \{A^\BR,A^\BH,A\}$};\\
+       & \BC^n \times \BC^n, & \textrm{if $\star = A^\BC$}.
+   \end{aligned}
+   \right.
+\]
+\[
+    Q_{\iota} = \left\{
+    \begin{aligned}
+        & \BZ^n \subseteq \BC^n = {^{a}\fh^*}, \ &\textrm{if $\star \in \{A^\BR, A^\BH,A\}$};\\
+        & \BZ^n \times \BZ^n \subseteq \BC^n \times \BC^n = {^{a}\fh^*}, \ &\textrm{if $\star = A^\BC$},
    \end{aligned}
    \right.
 \]
@@ -498,18 +514,18 @@ Identification:
 
 
 
-\begin{frame}{Combinatorial Data}
+\begin{frame}{Combinatorial data}
   \begin{block}{Painted Young Diagram (type $A^{\BR}$)}
     A painting on a Young diagram $\iota$ of type $A^{\BR}$ is a map (we place a symbol in each box)
    $$\CP : \mathrm{Box}(\iota) \to \{ \bullet, c ,d \}$$
-   with the following properties
+   With the following properties
 
    \begin{itemize}
-      \item if we remove the boxes painted with $\{d\}, \{c,d\}$, the remainder still constitutes a Young diagram;
-      \item every column of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$;
-      \item every row of $\iota$ has an even number of boxes painted with $\bullet$.
+      \pause\item if we remove the boxes painted with $\{d\}, \{c,d\}$, the remainder still constitutes a Young diagram;
+      \pause\item every column of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$;
+      \pause\item every row of $\iota$ has an even number of boxes painted with $\bullet$.
    \end{itemize}
-   A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$. Denote by $\mathrm{P}_{A^{\BR}}(\iota)$ the set of paintings on $\iota$ of type $A^{\BR}$.
+   \pause A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$. Denote by $\mathrm{P}_{A^{\BR}}(\iota)$ the set of paintings on $\iota$ of type $A^{\BR}$.
   \end{block}
   
 \end{frame}
@@ -525,7 +541,7 @@ Identification:
         d
     \end{ytableau}
     \]
-    Each of the followings does not represent a painted Young diagram.
+    \pause Each of the following does not represent a painted Young diagram.
     \[
     \begin{ytableau}
       d & c
@@ -549,27 +565,27 @@ Identification:
   \begin{block}{Assigned Young Diagram}
     For a Young diagram $\iota$, and a partition $[d_1, \cdots, d_k]$ of $|\iota|$.  An assignment of type $[d_1,d_2, \cdots, d_N]$ on $\iota$ is a map
    $$\CQ: \mathrm{Box}(\iota) \to \{1,2, \cdots,N\} $$
-   with the following properties
+   With the following properties
 
    \begin{itemize}
-      \item for each $i \in \{1,2,\cdots,N\}$, the preimage $\CP^{-1}(i)$ has exactly $d_i$ elements;
-      \item for each $1 \leq n \leq N$, if we remove the boxes assigned with $\{N+1, \cdots, |\iota|\}$, the reminder still constitutes a Young diagram;
-      \item each positive integer occurs at most once in each column.
+      \pause\item for each $i \in \{1,2,\cdots,N\}$, the preimage $\CP^{-1}(i)$ has exactly $d_i$ elements;
+      \pause\item for each $1 \leq n \leq N$, if we remove the boxes assigned with $\{n+1, \cdots, N\}$, the reminder still constitutes a Young diagram;
+      \pause\item each positive integer occurs at most once in each column.
    \end{itemize}
-   An assigned Young diagram of type $[d_1,d_2, \cdots, d_N]$ is a pair $(\iota,\CQ)$ consisting of a Young diagram $\iota$ and an assignment $\CQ$ of type $[d_1,d_2, \cdots, d_N]$ on $\iota$. Denote by $\RA_{[d_1,d_2,\cdots,d_N]}(\iota)$ the set of all assignments on $\iota$ of type $[d_1,d_2,\cdots,d_N]$.
+   \pause An assigned Young diagram of type $[d_1,d_2, \cdots, d_N]$ is a pair $(\iota,\CQ)$ consisting of a Young diagram $\iota$ and an assignment $\CQ$ of type $[d_1,d_2, \cdots, d_N]$ on $\iota$. Denote by $\RA_{[d_1,d_2,\cdots,d_N]}(\iota)$ the set of all assignments on $\iota$ of type $[d_1,d_2,\cdots,d_N]$.
   \end{block}
 \end{frame}
 
 
 
-\begin{frame}{Counting Result for $\GL_n(\BR)$, The Integral Case}
+\begin{frame}{Counting result for $\GL_n(\BR)$: The integral case}
   $G = \GL_n(\BR)$ ($n \in \BN$). $\CO$ is a nilpotent orbits in $\fg$, denote the corresponding Young diagram by $\iota(\CO)$.\par
     If $\nu \in {^{a}\fh^*} = \BC^n$ is integral, its coordinates can be permuted such that 
         \[
         \nu = (\underbrace{\lambda_1, \cdots, \lambda_1}_{d_1}, \underbrace{\lambda_2, \cdots, \lambda_2}_{d_2}, \cdots, \underbrace{\lambda_k, \cdots, \lambda_k}_{d_k}) \in \BC^n,
         \]
         where $[d_1, d_2, \cdots , d_k]$ is a partition of $n$, and the $\lambda_i \in \BC$ satisfy the condition $\lambda_i - \lambda_j \in \BZ \setminus \{0\}$ for any $i \neq j$.
-  \begin{block}{Theorem}
+  \pause\begin{block}{Theorem}
         \begin{equation*}
             \sharp(\Irr_\nu(\GL_{n}(\BR);\CO)) = \sharp\left(\mathrm{P}_{A^{\BR}}(\iota(\CO))\right)\cdot \sharp\left(\RA_{[d_1,\cdots,d_k]}(\iota(\CO))\right).
         \end{equation*}
@@ -580,12 +596,12 @@ Identification:
 
 
 
-\begin{frame}{Sketch of the Calculation}
+\begin{frame}{Sketch of the calculation}
   Coherent continuation representations can be explicitly computed via the Hecke algebra module structure described by Lusztig and Vogan.
   \begin{equation*}
     \mathrm{Coh}_{\Lambda}(\CK(\GL_{n}(\BR))) = \bigoplus_{2r + i \leq n} \Ind _{\mathrm{W}_{r} \times \mathrm{S}_{i} \times \mathrm{S}_{n-2r-i}}^{\mathrm{S}_{n}} \epsilon \otimes 1 \otimes 1.
   \end{equation*}
-  The computation makes essential use of \alert{Pieri's rule and Frobenius reciprocity} .
+  \pause The computation makes essential use of \alert{Pieri's rule and Frobenius reciprocity}.
   \begin{align*}
     \sharp(\Irr_\nu(\GL_{n}(\BR);\CO)) &= [1_{W_\nu}:\sigma_{\CO}] \cdot [\sigma_{\CO}:\mathrm{Coh}_{\Lambda}(\CK(\GL_{n}(\BR)))]\\
     &= [\sigma_{\CO}:\Ind_{W_{\nu}}^{W}1_{W_{\nu}}] \cdot [\sigma_{\CO}:\mathrm{Coh}_{\Lambda}(\CK(\GL_{n}(\BR)))]\\
@@ -598,9 +614,9 @@ Identification:
 
 
 
-\begin{frame}{Example: Minimal Representations}
+\begin{frame}{Example: Minimal representations}
 
-Let \( \nu \in {^a\mathfrak{h}}^* \) be a regular integral infinitesimal character, and let \( \mathcal{O}_{\mathrm{min}} \) denote the minimal nilpotent orbit.
+Let \( \nu \in {^a\mathfrak{h}}^* \) be a regular integral infinitesimal character, and let \( \mathcal{O}_{\mathrm{min}} \) denote the \alert{minimal nilpotent orbit}.
 
 \medskip
 
@@ -620,7 +636,7 @@ There are \( n-1 \) assignments of type \( [\underbrace{1, 1, \dots, 1}_n] \) on
 
 \medskip
 
-Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we obtain exactly \alert{4(n-1) minimal representations}   with the fixed infinitesimal character \( \nu \).
+\pause Since there are 4 distinct paintings on $\iota_{\CO}$, we obtain exactly \alert{4(n-1) minimal representations}   with the fixed infinitesimal character \( \nu \).
 
 \end{frame}
 
@@ -629,18 +645,19 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 
 
 
-\begin{frame}{Non-integral Case}
-  \begin{block}{Theorem}
-    For an arbitrary $\nu \in {^{a}\fh}^*$, its coordinates can be permuted such that 
+\begin{frame}{Non-integral case}
+  For an arbitrary $\nu \in {^{a}\fh}^*$, its coordinates can be permuted such that 
         \[
         \nu = (\blam_1, \cdots, \blam_r) \in \BC^n,
         \]
         \[
         \blam_i = (\underbrace{\lambda_{i,1}, \cdots, \lambda_{i,1}}_{d_{i,1}}, \cdots, \underbrace{\lambda_{i,k_i}, \cdots, \lambda_{i,k_i}}_{d_{i,k_i}}) \in \BC^{e_i} \ \ (e_i \geq 1),
         \]  
-        where each $\blam_i$ is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ is not integral for any $i \neq j$, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for any $p \neq q$. Then
+        where each $\blam_i$ is integral but $(\blam_i,\blam_j) \in \BC^{e_i+e_j}$ is not integral for any $i \neq j$, $[d_{i,1}, \cdots d_{i,k_i} ]$ is a partition of $e_i$, and the condition $\lambda_{i,p} - \lambda_{i,q} \in \BZ \setminus \{0\}$ holds for any $p \neq q$.
+  \pause\begin{block}{Theorem}
+    
         \begin{equation*}
-            \sharp(\Irr_{\nu}(G;\CO)) = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r = \iota(\CO) }}\prod_{i=1}^{r}\sharp(\Irr_{\blam_i}(\GL_{e_i}(\BR);\CO_{\iota_i})).
+            \sharp(\Irr_{\nu}(G;\CO)) = \sum_{\substack{(\iota_1,\cdots,\iota_r) \in \mathrm{YD}_{e_1} \times \cdots \times \mathrm{YD}_{e_r} \\ \iota_1 \mathop{\sqcup}\limits^r \iota_2 \cdots \mathop{\sqcup}\limits^r  \iota_r = \iota(\CO) }}\prod_{i=1}^{r}\sharp(\Irr_{\blam_i}(\GL_{e_i}(\BR);\CO_{\iota_i}))
         \end{equation*}
   \end{block}
 \end{frame}
@@ -650,7 +667,7 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 
 
 
-\begin{frame}{Key Observation}
+\begin{frame}{Key observation}
   There are natural isomorphism of $W(\Lambda)$-representations:
   \begin{align*}
     \mathrm{Coh}_{\Lambda_1}(\CK(\GL_{e_1}(\BR))) \otimes \cdots \otimes \mathrm{Coh}_{\Lambda_r}(\CK(\GL_{e_r}(\BR))) &\to \mathrm{Coh}_{\Lambda}(\CK(\GL_{n}(\BR)))\\
@@ -660,18 +677,18 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 \end{frame}
 
 
-\begin{frame}{Combinatorial Data}
-  \begin{block}{Painted Young Diagram (type $A$)}
+\begin{frame}{Combinatorial data}
+  \begin{block}{Painted Young diagram (type $A$)}
     A painting on a Young diagram $\iota$ of type $A$ is a map (we place a symbol in each box)
    $$\CP : \mathrm{Box}(\iota) \to \{ \bullet, s ,r \}$$
-   with the following properties
+   With the following properties
 
    \begin{itemize}
-      \item if we remove the boxes painted with $\{s\}, \{s,r\}$, the remainder still constitutes a Young diagram;
-      \item every row of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$;
-      \item every row of $\iota$ has an even number of boxes painted with $\bullet$.
+      \pause\item if we remove the boxes painted with $\{s\}, \{s,r\}$, the remainder still constitutes a Young diagram;
+      \pause\item every row of $\iota$ has at most one box painted with $c$, and has at most one box painted with $d$;
+      \pause\item every row of $\iota$ has an even number of boxes painted with $\bullet$.
    \end{itemize}
-   A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$. Denote by $\mathrm{P}_{A}(\iota)$ the set of paintings on $\iota$ of type $A$.
+   \pause A painted Young diagram is a pair $(\iota, \CP)$ consisting of a Young diagram $\iota$ and a painting $\CP$ on $\iota$. Denote by $\mathrm{P}_{A}(\iota)$ the set of paintings on $\iota$ of type $A$.
     
   \end{block}
 \end{frame}
@@ -682,7 +699,7 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 
 
 \begin{frame}
-  Let $\iota$ be a Young diagram and $\CP$ is a painting on $\iota$ of type $A$. Define the signature of $\CP$ to be the pair of non-negative integers
+  Let $\iota$ be a Young diagram and $\CP$ be a painting on $\iota$ of type $A$. Define the signature of $\CP$ to be the pair of non-negative integers
    \begin{equation*}
     \left(p_{\CP}, q_{\CP}\right) := \left(\frac{\sharp(\CP^{-1}(\bullet))}{2} + \sharp(\CP^{-1}(s)), \frac{\sharp(\CP^{-1}(\bullet))}{2}+ \sharp(\CP^{-1}(r))\right),
    \end{equation*}
@@ -697,7 +714,7 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 
 
 
-\begin{frame}{Counting Result for $\U(p,q)$, The Integral Case}
+\begin{frame}{Counting result for $\U(p,q)$: The integral case}
   $G = \U(p,q)$ ($p, q \in \BN$). $\CO$ is a nilpotent orbit in $\fg$, denote the corresponding Young diagram by $\iota(\CO)$.\par
   If $\nu \in {^a\fh^*} = \BC^n$ ($n = p+q$) is integral, that is, the differences of its coordinates are integral, then its coordinates can be permuted such that 
   \[ 
@@ -719,7 +736,7 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
         \end{equation*}
         If $\lambda_1 \in \frac{n}{2} + \BZ$, then
         \begin{equation*}
-            \sharp(\Irr_{\nu}(\U(p,q);\CO)) = \sharp\left(\mathrm{A}_{[d_1,\cdots,d_k]}(\iota(\CO))\right)\delta_{p,q}.
+            \sharp(\Irr_{\nu}(\U(p,q);\CO)) = \sharp\left(\mathrm{A}_{[d_1,\cdots,d_k]}(\iota(\CO))\right) \cdot \delta_{p,q}.
         \end{equation*}
         Otherwise, $\sharp(\Irr_{\nu}(\U(p,q);\CO)) = 0$.
   \end{block}
@@ -730,7 +747,7 @@ Since there are 4 distinct paintings on each of the \( n-1 \) assignments, we ob
 
 
 
-\begin{frame}{Example: Generic Representations}
+\begin{frame}{Example: Generic representations}
 
 Let \( G = \U(n,n) \), and let \( \CO_{\mathrm{prin}} \) denote the principal nilpotent orbit.
 
@@ -750,7 +767,7 @@ Hence, there are exactly \alert{2 generic representations} with this infinitesim
 
 \medskip
 
-If the coordinates of \( \nu \) are all \alert{integers}, then there is only one assignment and only one painting. Therefore, there is exactly \alert{1 generic representation} with this infinitesimal character.
+\pause If the coordinates of \( \nu \) are all \alert{integers}, then there is only one assignment. Therefore, there is only \alert{1 generic representation} with this infinitesimal character.
 
 \end{frame}
 
